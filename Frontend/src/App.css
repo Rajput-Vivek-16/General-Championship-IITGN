@@ -1,0 +1,14 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Welcome Text */
+.welcome-text {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 2rem;
+}

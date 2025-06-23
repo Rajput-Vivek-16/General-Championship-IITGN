@@ -1,0 +1,139 @@
+.standings-container {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+  
+  .standings {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .standings-table {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .standings-table h3 {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px; /* Ensure a minimum width for scrolling */
+  }
+  
+  th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    white-space: nowrap; /* Prevent text from breaking */
+  }
+  
+  th {
+    background: #543191;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .standings-container {
+      padding: 10px;
+    }
+  
+    .standings-table {
+      padding: 10px;
+      width: 100%;
+    }
+  
+    .table-wrapper {
+      overflow-x: auto;
+      max-width: 100%;
+    }
+  
+    table {
+      min-width: 700px;
+    }
+  
+    th, td {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .standings {
+      gap: 15px;
+    }
+  
+    table {
+      min-width: 600px;
+    }
+  
+    th, td {
+      font-size: 12px;
+      padding: 6px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .standings h2 {
+      font-size: 18px;
+    }
+  
+    .standings-table h3 {
+      font-size: 16px;
+    }
+  
+    table {
+      min-width: 500px;
+    }
+  
+    th, td {
+      font-size: 10px;
+      padding: 5px;
+    }
+  }
+  
+  /* Customize the scrollbar for WebKit browsers (Chrome, Safari) */
+.table-wrapper::-webkit-scrollbar {
+    height: 8px; /* Adjust scrollbar thickness */
+  }
+  
+  .table-wrapper::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Light color for scrollbar track */
+    border-radius: 10px;
+  }
+  
+  .table-wrapper::-webkit-scrollbar-thumb {
+    background: #d1d1d1; /* Light grey scrollbar handle */
+    border-radius: 10px;
+  }
+  
+  .table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #b0b0b0; /* Slightly darker on hover */
+  }
+  
+  /* Firefox scrollbar */
+  .table-wrapper {
+    scrollbar-color: #d1d1d1 #f0f0f0; /* Thumb color, Track color */
+    scrollbar-width: thin;
+  }
+  
