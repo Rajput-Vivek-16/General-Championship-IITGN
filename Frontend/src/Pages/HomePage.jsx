@@ -36,6 +36,12 @@ import img27 from "../assets/images/87.webp";
 import { NavLink } from "react-router-dom";
 
 function HomePage() {
+    const slideImages = [
+        img1, img2, img3, img4, img5, img6, img7, img8, img9,
+        img10, img11, img12, img13, img14, img15, img16, img17, img18,
+        img19, img20, img21, img22, img23, img24, img25, img26, img27,
+    ];
+
     const settings = {
         dots: false,
         arrows: false,
@@ -50,95 +56,30 @@ function HomePage() {
     return (
         <div className="bgcontainer">
             <div className="leftsection">
+                <div className="hero-badge">Sports Council, IIT Gandhinagar</div>
                 <div className="sectionhead">IIT GANDHINAGAR'S</div>
                 <div className="sectionmid">GENERAL CHAMPIONSHIP</div>
                 <div className="sectionend">UNITE | COMPETE | CONQUER</div>
-                <NavLink className="customButton" to="/register">Register Now</NavLink>
+                <p className="hero-subtext">
+                    Register your batch, build your squad, and compete across sports for glory.
+                </p>
+                <NavLink className="customButton" to="/register">Register Team</NavLink>
             </div>
 
             <div className="rightsection">
                 <Slider {...settings}>
-                    <div>
-                        <img src={img1} alt="Slide 1" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img2} alt="Slide 2" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img3} alt="Slide 3" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img4} alt="Slide 4" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img5} alt="Slide 5" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img6} alt="Slide 6" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img7} alt="Slide 7" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img8} alt="Slide 8" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img9} alt="Slide 9" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img10} alt="Slide 10" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img11} alt="Slide 11" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img12} alt="Slide 12" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img13} alt="Slide 13" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img14} alt="Slide 14" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img15} alt="Slide 15" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img16} alt="Slide 16" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img17} alt="Slide 17" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img18} alt="Slide 18" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img19} alt="Slide 19" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img20} alt="Slide 20" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img21} alt="Slide 21" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img22} alt="Slide 22" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img23} alt="Slide 23" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img24} alt="Slide 24" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img25} alt="Slide 25" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img26} alt="Slide 26" className="carousel-image" />
-                    </div>
-                    <div>
-                        <img src={img27} alt="Slide 27" className="carousel-image" />
-                    </div>
+                    {slideImages.map((imageSrc, index) => (
+                        <div key={index}>
+                            <img
+                                src={imageSrc}
+                                alt={`Slide ${index + 1}`}
+                                className="carousel-image"
+                                loading={index === 0 ? "eager" : "lazy"}
+                                decoding="async"
+                                fetchPriority={index === 0 ? "high" : "auto"}
+                            />
+                        </div>
+                    ))}
 
                 </Slider>
             </div>

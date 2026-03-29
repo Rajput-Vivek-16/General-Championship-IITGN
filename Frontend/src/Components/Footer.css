@@ -34,6 +34,34 @@
     color: #f8f8f8;
 }
 
+.footer-contact-list {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    text-align: left;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.footer-contact-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 70px;
+    color: #f8f8f8;
+    font-weight: 600;
+}
+
+.footer-contact-value {
+    color: #ddd;
+}
+
 /* Ensuring Logo Displays Properly */
 .sport_logo {
     width: 120px; /* Adjust as needed */
@@ -106,6 +134,11 @@
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-contact-list {
+        align-items: center;
         text-align: center;
     }
 

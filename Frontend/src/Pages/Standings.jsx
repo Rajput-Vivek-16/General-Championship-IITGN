@@ -34,32 +34,32 @@ const Standings = () => {
   };
 
   const menData = [
-    { batch: "B.Tech'21", swimming: 0, waterpolo: 10, athletics: 52, badminton: 10, basketball: 0.5, cricket: 2, football: 6, lawnTennis: 6, powerlifting: 10, squash: 4, tableTennis: 0, volleyball: 6, penalty: 0, total: 0, remark: "bye" },
-    { batch: "B.Tech'22", swimming: 0, waterpolo: 6, athletics: 5, badminton: 0.5, basketball: 10, cricket: 0, football: 0, lawnTennis: 2, powerlifting: 2, squash: 10, tableTennis: 0, volleyball: 10, penalty: 0, total: 0, remark: "" },
-    { batch: "B.Tech'23", swimming: 0, waterpolo: 4, athletics: 51, badminton: 6, basketball: 0.5, cricket: 10, football: 10, lawnTennis: 4, powerlifting: 6, squash: 2, tableTennis: 0, volleyball: 2, penalty: 0, total: 0, remark: "" },
-    { batch: "B.Tech'24", swimming: 0, waterpolo: 2, athletics: 17, badminton: 4, basketball: 4, cricket: 0, football: 0, lawnTennis: 10, powerlifting: 0, squash: 6, tableTennis: 0, volleyball: 4, penalty: 0, total: 0, remark: "" },
-    { batch: "Master'23", swimming: 0, waterpolo: 0, athletics: 46, badminton: 0.5, basketball: 2, cricket: 4, football: 0, lawnTennis: 0, powerlifting: 0, squash: 0, tableTennis: 0, volleyball: 0, penalty: 0, total: 0, remark: "" },
-    { batch: "Master'24", swimming: 0, waterpolo: 0, athletics: 6, badminton: 0.5, basketball: 0.5, cricket: 0, football: 4, lawnTennis: 0, powerlifting: 4, squash: 0, tableTennis: 0, volleyball: 0, penalty: 0, total: 0, remark: "" },
-    { batch: "PhD", swimming: 0, waterpolo: 0, athletics: 0, badminton: 2, basketball: 6, cricket: 6, football: 2, lawnTennis: 0, powerlifting: 0, squash: 0, tableTennis: 0, volleyball: 0, penalty: 0, total: 0, remark: "" },
+    { batch: "B.Tech'22", swimming: 0, waterpolo: 0, athletics: 0, badminton: 0, basketball: 0, cricket: 0, football: 0, lawnTennis: 0, powerlifting: 0, squash: 0, tableTennis: 0, volleyball: 0, penalty: 0, total: 0, remark: "" },
+    { batch: "B.Tech'23", swimming: 0, waterpolo: 0, athletics: 0, badminton: 0, basketball: 0, cricket: 0, football: 0, lawnTennis: 0, powerlifting: 0, squash: 0, tableTennis: 0, volleyball: 0, penalty: 0, total: 0, remark: "" },
+    { batch: "B.Tech'24", swimming: 0, waterpolo: 0, athletics: 0, badminton: 0, basketball: 0, cricket: 0, football: 0, lawnTennis: 0, powerlifting: 0, squash: 0, tableTennis: 0, volleyball: 0, penalty: 0, total: 0, remark: "" },
+    { batch: "B.Tech'25", swimming: 0, waterpolo: 0, athletics: 0, badminton: 0, basketball: 0, cricket: 0, football: 0, lawnTennis: 0, powerlifting: 0, squash: 0, tableTennis: 0, volleyball: 0, penalty: 0, total: 0, remark: "bye" },
+    { batch: "Master'24", swimming: 0, waterpolo: 0, athletics: 0, badminton: 0, basketball: 0, cricket: 0, football: 0, lawnTennis: 0, powerlifting: 0, squash: 0, tableTennis: 0, volleyball: 0, penalty: 0, total: 0, remark: "" },
+    { batch: "Master'25", swimming: 0, waterpolo: 0, athletics: 0, badminton: 0, basketball: 0, cricket: 0, football: 0, lawnTennis: 0, powerlifting: 0, squash: 0, tableTennis: 0, volleyball: 0, penalty: 0, total: 0, remark: "" },
+    { batch: "PhD", swimming: 0, waterpolo: 0, athletics: 0, badminton: 0, basketball: 0, cricket: 0, football: 0, lawnTennis: 0, powerlifting: 0, squash: 0, tableTennis: 0, volleyball: 0, penalty: 0, total: 0, remark: "" },
   ].map(entry => ({ ...entry, total: calculateTotal(entry) }));
   const womenData = [
-    { batch: "B.Tech'21", swimming: 0, waterpolo: 0, athletics: 25, badminton: 0.5, basketball: 4, cricket: 0, football: 0, lawnTennis: 4, powerlifting: 2, squash: 6, tableTennis: 0, volleyball: 10, penalty: 0, total: 0, remark: "not bye" },
-    { batch: "B.Tech'22", swimming: 0, waterpolo: 0, athletics: 37, badminton: 0.5, basketball: 10, cricket: 6, football: 6, lawnTennis: 2, powerlifting: 4, squash: 2, tableTennis: 0, volleyball: 2, penalty: 0, total: 0, remark: "" },
-    { batch: "B.Tech'23", swimming: 0, waterpolo: 0, athletics: 4, badminton: 2, basketball: 2, cricket: 2, football: 10, lawnTennis: 0, powerlifting: 0, squash: 4, tableTennis: 0, volleyball: 0, penalty: 0, total: 0, remark: "" },
-    { batch: "B.Tech'24", swimming: 0, waterpolo: 0, athletics: 30, badminton: 4, basketball: 0.5, cricket: 4, football: 4, lawnTennis: 6, powerlifting: 0, squash: 10, tableTennis: 0, volleyball: 4, penalty: 0, total: 0, remark: "" },
-    { batch: "Master'23", swimming: 0, waterpolo: 0, athletics: 12, badminton: 6, basketball: 0.5, cricket: 0, football: 0, lawnTennis: 10, powerlifting: 0, squash: 0, tableTennis: 0, volleyball: 0, penalty: 0, total: 0, remark: "" },
-    { batch: "Master'24", swimming: 0, waterpolo: 0, athletics: 7, badminton: 0.5, basketball: 0.5, cricket: 0, football: 0, lawnTennis: 0, powerlifting: 6, squash: 0, tableTennis: 0, volleyball: 0, penalty: 0, total: 0, remark: "" },
-    { batch: "PhD", swimming: 0, waterpolo: 0, athletics: 6, badminton: 10, basketball: 6, cricket: 10, football: 2, lawnTennis: 0, powerlifting: 10, squash: 0, tableTennis: 0, volleyball: 6, penalty: 0, total: 0, remark: "" },
+    { batch: "B.Tech'22", swimming: 0, waterpolo: 0, athletics: 0, badminton: 0, basketball: 0, cricket: 0, football: 0, lawnTennis: 0, powerlifting: 0, squash: 0, tableTennis: 0, volleyball: 0, penalty: 0, total: 0, remark: "" },
+    { batch: "B.Tech'23", swimming: 0, waterpolo: 0, athletics: 0, badminton: 0, basketball: 0, cricket: 0, football: 0, lawnTennis: 0, powerlifting: 0, squash: 0, tableTennis: 0, volleyball: 0, penalty: 0, total: 0, remark: "" },
+    { batch: "B.Tech'24", swimming: 0, waterpolo: 0, athletics: 0, badminton: 0, basketball: 0, cricket: 0, football: 0, lawnTennis: 0, powerlifting: 0, squash: 0, tableTennis: 0, volleyball: 0, penalty: 0, total: 0, remark: "" },
+    { batch: "B.Tech'25", swimming: 0, waterpolo: 0, athletics: 0, badminton: 0, basketball: 0, cricket: 0, football: 0, lawnTennis: 0, powerlifting: 0, squash: 0, tableTennis: 0, volleyball: 0, penalty: 0, total: 0, remark: "not bye" },
+    { batch: "Master'24", swimming: 0, waterpolo: 0, athletics: 0, badminton: 0, basketball: 0, cricket: 0, football: 0, lawnTennis: 0, powerlifting: 0, squash: 0, tableTennis: 0, volleyball: 0, penalty: 0, total: 0, remark: "" },
+    { batch: "Master'25", swimming: 0, waterpolo: 0, athletics: 0, badminton: 0, basketball: 0, cricket: 0, football: 0, lawnTennis: 0, powerlifting: 0, squash: 0, tableTennis: 0, volleyball: 0, penalty: 0, total: 0, remark: "" },
+    { batch: "PhD", swimming: 0, waterpolo: 0, athletics: 0, badminton: 0, basketball: 0, cricket: 0, football: 0, lawnTennis: 0, powerlifting: 0, squash: 0, tableTennis: 0, volleyball: 0, penalty: 0, total: 0, remark: "" },
   ].map(entry => ({ ...entry, total: calculateTotal(entry) }));
 
   const manualData = {
-    "B.Tech'21": { chess: 0, frisbee: 4 },
-    "B.Tech'22": { chess: 0, frisbee: 10 },
-    "B.Tech'23": { chess: 6, frisbee: 2 },
-    "B.Tech'24": { chess: 10, frisbee: 6 },
-    "Master'23": { chess: 0, frisbee: 0 },
-    "Master'24": { chess: 2, frisbee: 0 },
-    "PhD":       { chess: 4, frisbee: 0 }
+    "B.Tech'22": { chess: 0, frisbee: 0 },
+    "B.Tech'23": { chess: 0, frisbee: 0 },
+    "B.Tech'24": { chess: 0, frisbee: 0 },
+    "B.Tech'25": { chess: 0, frisbee: 0 },
+    "Master'24": { chess: 0, frisbee: 0 },
+    "Master'25": { chess: 0, frisbee: 0 },
+    "PhD":       { chess: 0, frisbee: 0 }
   };
   
 
@@ -98,9 +98,9 @@ const Standings = () => {
 
   return (
     <div className="standings-container">
-      <div className="standings-container">
+      {/* <div className="standings-container">
         <SportsStandings />
-      </div>
+      </div> */}
       {/* <h2>General Championship Standings</h2> */}
       <div className="standings">
         {["Overall", "Men", "Women"].map((category) => (

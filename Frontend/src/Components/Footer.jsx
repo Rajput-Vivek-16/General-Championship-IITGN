@@ -1,5 +1,5 @@
 import React from "react";
-import { FaFacebook, FaInstagram, FaGlobe } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaGlobe, FaUserTie, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import "./Footer.css";
 import sport_iitgn_logo from "../assets/sports_iitgn_logo.png";
 
@@ -17,9 +17,20 @@ const Footer = () => {
         {/* Contact Details */}
         <div className="footer-section">
           <h2>Sports Secretary</h2>
-          <p>Adit Rambhia: <a className="contact" href="mailto:rambhiaadit@iitgn.ac.in">rambhiaadit@iitgn.ac.in</a></p>
-          <p>Email: <a className="contact" href="mailto:sports.secretary@iitgn.ac.in">sports.secretary@iitgn.ac.in</a></p>
-          <p>Contact: <a className="contact" href="tel:+918850270294">+91 88502 70294</a></p>
+          <div className="footer-contact-list">
+            <p className="footer-contact-item">
+              <span className="footer-contact-label"><FaUserTie /> Name:</span>
+              <a className="contact footer-contact-value" href="mailto:keshav.sobania@iitgn.ac.in">Keshav Sobania</a>
+            </p>
+            <p className="footer-contact-item">
+              <span className="footer-contact-label"><FaEnvelope /> Email:</span>
+              <a className="contact footer-contact-value" href="mailto:sports.secretary@iitgn.ac.in">sports.secretary@iitgn.ac.in</a>
+            </p>
+            <p className="footer-contact-item">
+              <span className="footer-contact-label"><FaPhoneAlt /> Phone:</span>
+              <a className="contact footer-contact-value" href="tel:+917240638176">+91 72406 38176</a>
+            </p>
+          </div>
         </div>
 
         {/* Social Media */}
@@ -40,7 +51,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-bottom">
-        &copy; {new Date().getFullYear()} Sports IIT GN | Designed by HeH
+        &copy; {new Date().getFullYear()} Sports IITGN
       </div>
     </footer>
   )

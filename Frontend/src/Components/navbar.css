@@ -1,10 +1,3 @@
-/* YOUR ORIGINAL CSS - COMPLETELY UNCHANGED */
-* {
-  padding: none;
-  margin: none;
-  box-sizing: border-box;
-}
-
 .navbar {
   background: #543191;
   display: flex;
@@ -18,15 +11,15 @@
   z-index: 1000;
 }
 
-.nav-logo {
-  height: 80px;
-  width: 60px;
-}
-
 .navstart {
   display: flex;
   width: 50%;
   padding-left: 3rem;
+}
+
+.nav-logo {
+  height: 80px;
+  width: 60px;
 }
 
 .navtitcontainer {
@@ -83,8 +76,11 @@
   font-weight: bold;
 }
 
-/* NEW MOBILE-ONLY STYLES (≤600px) */
-@media (max-width: 800px) {
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 900px) {
   .navbar {
       position: relative;
       padding: 1rem;
@@ -94,7 +90,6 @@
   .navstart {
       position: absolute;
       left: 0px;
-      /* transform: translateX(-50%); */
       width: auto;
       padding-left: 0;
       text-align: center;
@@ -159,10 +154,3 @@
       transform: translateY(-8px) rotate(-45deg);
   }
 }
-
-/* Ensure hamburger is hidden on desktop */
-/* @media (min-width: 601px) {
-  .hamburger {
-      display: none !important;
-  }
-} */

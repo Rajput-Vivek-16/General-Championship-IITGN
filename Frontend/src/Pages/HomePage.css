@@ -1,136 +1,166 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
 }
 
 .bgcontainer {
-    background: url('../assets/bag.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    min-height: 90vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem;
-    color: white;
+        background: url('../assets/bag.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        min-height: 90vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem;
+        color: white;
 }
 
 .leftsection {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    margin-left: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        width: 100%;
+        margin-left: 30px;
+        max-width: 700px;
+}
+
+.hero-badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.4rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(0, 0, 0, 0.22);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.8rem;
 }
 
 .sectionhead {
-    font-size: 3rem;
-    font-weight: bold;
-    color: cyan;
-    margin-bottom: 0.5rem;
-    line-height: 1.1;
+        font-size: 3rem;
+        font-weight: bold;
+        color: cyan;
+        margin-bottom: 0.5rem;
+        line-height: 1.1;
 }
 
 .sectionmid {
-    font-size: 4rem;
-    font-weight: bolder;
-    margin-bottom: 0.5rem;
-    line-height: 1.1;
-    letter-spacing: 1.5px;
-    text-align: center;
+        font-size: 4rem;
+        font-weight: bolder;
+        margin-bottom: 0.5rem;
+        line-height: 1.1;
+        letter-spacing: 1.5px;
+        text-align: left;
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
 }
 
 .sectionend {
-    font-size: 1.5rem;
-    font-weight: bolder;
-    color: cyan;
-    line-height: 1.1;
+        font-size: 1.5rem;
+        font-weight: bolder;
+        color: cyan;
+        line-height: 1.1;
+}
+
+.hero-subtext {
+        max-width: 520px;
+        margin-top: 0.9rem;
+        font-size: 1.05rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.9);
 }
 
 .customButton {
-    background-color: cyan;
-    color: #5a2b8a;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    margin-top: 4.5rem;
-    width: 200px;
-    height: 50px;
-    text-align: center;
-    text-decoration: none;
+        background-color: cyan;
+        color: #5a2b8a;
+        font-size: 1.2rem;
+        font-weight: bold;
+        padding: 0.8rem 1.5rem;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        margin-top: 1.6rem;
+        width: 230px;
+        height: 50px;
+        text-align: center;
+        text-decoration: none;
+        align-items: center;
 }
 
 .customButton:hover {
-    background-color: rgb(88, 222, 255);
-    transform: scale(1.03);
+        background-color: rgb(88, 222, 255);
+        transform: scale(1.03);
 }
 
 .rightsection {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-right: 2rem;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-right: 2rem;
 }
 
 .slick-slider {
-    width: 100%;
-    max-width: 600px;
+        width: 100%;
+        max-width: 600px;
 }
 
 .carousel-image {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 10px;
 }
 
 /* Mobile Styles (≤ 600px) */
 @media (max-width: 600px) {
-    .bgcontainer {
-        flex-direction: column;
-        padding: 1rem;
-        min-height: auto;
-    }
+        .bgcontainer {
+                flex-direction: column;
+                padding: 1rem;
+                min-height: auto;
+        }
 
-    .leftsection, 
-    .rightsection {
-        width: 100%;
-        margin-left: 0;
-        padding-right: 0;
-        text-align: center;
-        align-items: center;
-    }
+        .leftsection, 
+        .rightsection {
+                width: 100%;
+                margin-left: 0;
+                padding-right: 0;
+                text-align: center;
+                align-items: center;
+        }
 
-    .leftsection {
-        margin-bottom: 2rem;
-    }
+        .leftsection {
+                margin-bottom: 2rem;
+        }
 
-    .sectionhead {
-        font-size: 2rem;
-    }
+        .sectionhead {
+                font-size: 2rem;
+        }
 
-    .sectionmid {
-        font-size: 2.5rem;
-    }
+        .sectionmid {
+                font-size: 2.5rem;
+                text-align: center;
+        }
 
-    .sectionend {
-        font-size: 1.2rem;
-    }
+        .sectionend {
+                font-size: 1.2rem;
+        }
 
-    .customButton {
-        margin-top: 2rem;
-    }
+        .hero-subtext {
+                font-size: 0.95rem;
+                margin-top: 0.7rem;
+        }
 
-    .carousel-image {
-        height: 300px;
-    }
+        .customButton {
+                margin-top: 2rem;
+                width: 200px;
+        }
+
+        .carousel-image {
+                height: 300px;
+        }
 }

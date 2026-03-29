@@ -16,7 +16,7 @@ const Navbar = () => {
       <Link to = "/" className="navstart">
         <img src={logo} alt="Logo" className="nav-logo" />
         <div className="navtitcontainer">
-          <div className="navbar-title">GC 2025</div>
+          <div className="navbar-title">GC 2026</div>
           <p className="tagline">Unite | Compete | Conquer</p>
         </div>
       </Link>

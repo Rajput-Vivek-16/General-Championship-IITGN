@@ -87,7 +87,15 @@ const sportsList = [
 ];
 
 const Register = () => {
-  const { register, handleSubmit, watch } = useForm();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm({
+    mode: "onChange",
+    reValidateMode: "onChange",
+  });
   const [teamSize, setTeamSize] = useState(1);
   const [submitted, setSubmitted] = useState(false);
   const { sport } = useParams();
@@ -109,7 +117,7 @@ const Register = () => {
   //   TableTennis: "",
   //   Volleyball: "",
   // };
-  const sportSheetsAPI = "https://script.google.com/macros/s/AKfycbzV27MB4AqxNXMSTkItoFdko3p6H5PPTg5sBAS2LgXUsKW_HgDW9QdKhhfXRXL_TnYPwQ/exec"
+  const sportSheetsAPI = "https://script.google.com/macros/s/AKfycbxN4CKzFzfWVr5yA_JD-R8n63NA8khNDO0gp4toSxdcVFlIhgzQBZomJYDdH44c51U-vQ/exec"
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const gender = watch("gender");
@@ -173,12 +181,12 @@ const Register = () => {
             <label>Batch:</label>
             <select {...register("batch")} className="form-input" required>
               <option value="">Select Batch</option>
-              <option>B.Tech'21</option>
               <option>B.Tech'22</option>
               <option>B.Tech'23</option>
               <option>B.Tech'24</option>
-              <option>Master'23 (MA, M.Tech, M.Sc.)</option>
+              <option>B.Tech'25</option>
               <option>Master'24 (MA, M.Tech, M.Sc.)</option>
+              <option>Master'25 (MA, M.Tech, M.Sc.)</option>
               <option>PhD</option>
             </select>
 
@@ -235,9 +243,15 @@ const Register = () => {
             <input
               type="number"
               className="form-input"
-              {...register("teamSize")}
+              {...register("teamSize", {
+                required: "Team size is required",
+                valueAsNumber: true,
+                validate: (value) =>
+                  Number.isInteger(value) && value > 0 || "Team size must be a positive number",
+              })}
               value={teamSize === null ? "" : teamSize} // Allow empty input
               min="1"
+              step="1"
               onChange={(e) => {
                 const value = e.target.value.trim();
                 if (value === "") {
@@ -255,13 +269,28 @@ const Register = () => {
                 }
               }}
             />
+            {errors.teamSize && <p className="error-text">{errors.teamSize.message}</p>}
 
 
             <label>Captain Name:</label>
             <input {...register("captain")} className="form-input" required />
 
             <label>Captain Phone Number:</label>
-            <input type="tel" {...register("captainNumber")} className="form-input" required />
+            <input
+              type="tel"
+              {...register("captainNumber", {
+                required: "Required",
+                pattern: {
+                  value: /^\d{10}$/,
+                  message: "10 digits",
+                },
+              })}
+              className="form-input"
+              inputMode="numeric"
+              maxLength={10}
+              required
+            />
+            {errors.captainNumber && <p className="error-text">{errors.captainNumber.message}</p>}
 
             {/* <label>Vice Captain:</label>
             <input {...register("viceCaptain")} className="form-input" />
@@ -275,7 +304,22 @@ const Register = () => {
                   <label>Member {i + 1} Name:</label>
                   <input {...register(`member${i + 1}Name`)} className="form-input" required />
                   <label>Roll Number:</label>
-                  <input {...register(`member${i + 1}Roll`)} className="form-input" required />
+                  <input
+                    {...register(`member${i + 1}Roll`, {
+                      required: "Required",
+                      pattern: {
+                        value: /^\d{8}$/,
+                        message: "8 digits",
+                      },
+                    })}
+                    className="form-input"
+                    inputMode="numeric"
+                    maxLength={8}
+                    required
+                  />
+                  {errors[`member${i + 1}Roll`] && (
+                    <p className="error-text">{errors[`member${i + 1}Roll`].message}</p>
+                  )}
                 </div>
               ))}
             </div>

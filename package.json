@@ -1,9 +1,13 @@
 {
+  "name": "general-championship",
+  "private": true,
   "devDependencies": {
     "gh-pages": "^6.3.0"
   },
   "homepage": "https://rajput-vivek-16.github.io/your-repo-name",
   "scripts": {
+    "start": "npm --prefix Frontend run start",
+    "build": "npm --prefix Frontend run build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   }

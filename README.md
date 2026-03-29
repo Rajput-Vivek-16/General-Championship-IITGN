@@ -1,2 +1,2 @@
 # General-Championship-
-General Championship 2025
+General Championship 2026
